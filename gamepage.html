@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Overtake Minigame</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="../js/auth.js"></script>
+</head>
+
+<body class="gamePage">
+    <!--TOP MENU BAR
+        -->
+    <nav>
+        <div class="leftheader-menu">
+            <div class="logo">
+                <a href="/pages/homepage.html"><img src="/assets/Grandstands_Logo_White.png" width="95" height="30"></a>
+            </div>
+            <a href="/gamepage.html">PLAY</a>
+            <a href="https://www.twitch.tv/formula1" target="_blank">WATCH</a>
+            <a href="/pages/challenges.html">REWARDS</a>
+            <a href="/pages/choose.html">STORE</a>
+        </div>
+        <div class="rightheader-menu">
+            <a href="/pages/profile.html">PROFILE</a>
+            <a href="#" id="logout-button">LOG OUT</a>
+            <a href="/pages/cart.html"><img class="shoppingCart" src="/assets/shoppingcart.jpg" width="20"
+                    height="20"></a>
+        </div>
+    </nav>
+    <!--HEADER used to create space between body and menu bar-->
+    <div class="header">
+        <ul>
+            Play Overtake and get the High Score!
+        </ul>
+        <p>use arrow keys to move the car and dodge the obstacles</p>
+    </div>
+
+    <!--MAIN BODY-->
+    <div class="mainarea">
+        <!--divide the body up in 2 containers-->
+        <div class="float-containter">
+            <!--just a filler-->
+            <div class="filler"></div>
+
+            <!--FIRST CONTAINER game container-->
+            <div class="float-child1">
+                <div class="headerrow1">
+                    <ul>OVERTAKE</ul>
+                </div>
+
+                <!--game is supposed to go here-->
+                <div class="playareawrapper">
+                    <div class="playarea">
+
+                        <input type="image" id="myimage" src="images/gamepics/placeholder.png" onclick="startGame()"
+                            class="playarea">
+
+                    </div>
+                    <div class="gameover"></div>
+                </div>
+
+                <!--game reload button-->
+                <input type="button" value="reload game" onclick="location.reload()" class="reloadButton">
+            </div>
+
+
+            <!--SECOND CONTAINER leaderboard ranking-->
+            <div class="float-child2">
+                <div class="headerrow2">
+                    <ul>Monthly Leaderboard</ul>
+                </div>
+
+                <!--first row with titles for leaderboard-->
+                <div class="rowheader">
+                    <div class="rankheader">RANK</div>
+                    <div class="teamheader">TEAM</div>
+                    <div class="driverheader">DRIVER</div>
+                    <div class="scoreheader">SCORE</div>
+
+                </div>
+
+                <!--10 rows for leaderboard-->
+                <div class="rowGOLD">
+                    <div class="rank">1</div>
+                    <div class="team">Red Bull</div>
+                    <div class="driver">sodapoppin</div>
+                    <div class="score">24866</div>
+                </div>
+                <div class="rowSILVER">
+                    <div class="rank">2</div>
+                    <div class="team">Ferrari</div>
+                    <div class="driver">forsen_sc</div>
+                    <div class="score">20540</div>
+                </div>
+                <div class="rowBRONZE">
+                    <div class="rank">3</div>
+                    <div class="team">McLaren</div>
+                    <div class="driver">39daph</div>
+                    <div class="score">17605</div>
+                </div>
+                <div class="row">
+                    <div class="rank">4</div>
+                    <div class="team">Red Bull</div>
+                    <div class="driver">soo8gf</div>
+                    <div class="score">15684</div>
+                </div>
+                <div class="row">
+                    <div class="rank">5</div>
+                    <div class="team">Mercedes AMG</div>
+                    <div class="driver">Aztecross</div>
+                    <div class="score">14685</div>
+                </div>
+                <div class="row">
+                    <div class="rank">6</div>
+                    <div class="team">Mercedes AMG</div>
+                    <div class="driver">imaqtpie</div>
+                    <div class="score">12265</div>
+                </div>
+                <div class="row">
+                    <div class="rank">7</div>
+                    <div class="team">Alpine</div>
+                    <div class="driver">cyr</div>
+                    <div class="score">8850</div>
+                </div>
+                <div class="row">
+                    <div class="rank">8</div>
+                    <div class="team">McLaren</div>
+                    <div class="driver">moistcr1tikal</div>
+                    <div class="score">7801</div>
+                </div>
+                <div class="row">
+                    <div class="rank">9</div>
+                    <div class="team">Aston Martin</div>
+                    <div class="driver">CammyCakes</div>
+                    <div class="score">5580</div>
+                </div>
+                <div class="rowlast">
+                    <div class="rank">10</div>
+                    <div class="team">Alfa Romeo</div>
+                    <div class="driver">xQcOW</div>
+                    <div class="score">2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+<footer class="footer">
+    <div class="footercontainer">
+        <div class="footerrow">
+            <div class="footer-col">
+                <h4>PRIVACY</h4>
+                <ul>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookies Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>EXTRA</h4>
+                <ul>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">F1 Experiences</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Tickets</a></li>
+                    <li><a href="#">Rules & Regulations</a></li>
+                    <li><a href="#">Latest News</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>PAGES</h4>
+                <ul>
+                    <li><a href="../pages/homepage.html">Home</a></li>
+                    <li><a href="https://www.twitch.tv/formula1" target="_blank">Watch</a></li>
+                    <li><a href="/gamepage.html">Play</a></li>
+                    <li><a href="../pages/challenges.html">Rewards</a></li>
+                    <li><a href="../pages/choose.html">Store</a></li>
+                    <li><a href="../pages/profile.html">Profile</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>CONTACT</h4>
+                <ul>
+                    <li><a href="#">NL 060 - 123 - 45 - 67</a></li>
+                    <li><a href="#">support@starz.com</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footerBottom">&copy; Designed by StarZ</div>
+</footer>
+<!--script ref-->
+<script src="gamepage.js"></script>
+
+
+</html>

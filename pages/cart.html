@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
+        integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="../js/auth.js"></script>
+</head>
+
+<body class="cart">
+
+    <nav>
+        <div class="leftheader-menu">
+            <div class="logo">
+                <a href="/pages/homepage.html"><img src="/assets/Grandstands_Logo_White.png" width="95" height="30"></a>
+            </div>
+            <a href="/gamepage.html">PLAY</a>
+            <a href="https://www.twitch.tv/formula1" target="_blank">WATCH</a>
+            <a href="/pages/challenges.html">REWARDS</a>
+            <a href="/pages/choose.html">STORE</a>
+        </div>
+        <div class="rightheader-menu">
+            <a href="/pages/profile.html">PROFILE</a>
+            <a href="#" id="logout-button">LOG OUT</a>
+            <a href="/pages/cart.html"><img class="shoppingCart" src="/assets/shoppingcart.jpg" width="20"
+                    height="20"></a>
+        </div>
+    </nav>
+
+    <div class="containerr">
+        <h1 class="shoppingCheckout">Checkout</h1>
+        <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_cart">
+            <input type="hidden" name="upload" value="1">
+            <input type="hidden" name="business" value="womghei-facilitator@connect.hku.hk">
+            <input type="hidden" name="return" value="http://net.tutsplus.com/payment-complete/">
+            <table class="table table-hover">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th>Qty</th>
+                        <th>Item Name</th>
+                        <th>Cost</th>
+                        <th class="text-xs-right">Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody id="output"> </tbody>
+            </table>
+            <a href="../pages/choose.html" class="btn btn-fail btn-block">Continue Shopping</a>
+            <input type="submit" class="checkoutButton" value="Checkout">
+        </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/checkout.js"></script>
+</body>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<footer class="footer">
+    <div class="footercontainer">
+        <div class="footerrow">
+            <div class="footer-col">
+                <h4>PRIVACY</h4>
+                <ul>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookies Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>EXTRA</h4>
+                <ul>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">F1 Experiences</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Tickets</a></li>
+                    <li><a href="#">Rules & Regulations</a></li>
+                    <li><a href="#">Latest News</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>PAGES</h4>
+                <ul>
+                    <li><a href="../pages/homepage.html">Home</a></li>
+                    <li><a href="https://www.twitch.tv/formula1" target="_blank">Watch</a></li>
+                    <li><a href="/gamepage.html">Play</a></li>
+                    <li><a href="../pages/challenges.html">Rewards</a></li>
+                    <li><a href="../pages/choose.html">Store</a></li>
+                    <li><a href="../pages/profile.html">Profile</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>CONTACT</h4>
+                <ul>
+                    <li><a href="#">NL 060 - 123 - 45 - 67</a></li>
+                    <li><a href="#">support@starz.com</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footerBottom">&copy; Designed by StarZ</div>
+</footer>
+
+</html>

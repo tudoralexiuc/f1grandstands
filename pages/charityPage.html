@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
+        integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="../js/auth.js"></script>
+</head>
+
+<body class="charityPage">
+    <nav>
+        <div class="leftheader-menu">
+            <div class="logo">
+                <a href="/pages/homepage.html"><img src="/assets/Grandstands_Logo_White.png" width="95" height="30"></a>
+            </div>
+            <a href="/gamepage.html">PLAY</a>
+            <a href="https://www.twitch.tv/formula1" target="_blank">WATCH</a>
+            <a href="/pages/challenges.html">REWARDS</a>
+            <a href="/pages/choose.html">STORE</a>
+        </div>
+        <div class="rightheader-menu">
+            <a href="/pages/profile.html">PROFILE</a>
+            <a href="#" id="logout-button">LOG OUT</a>
+            <a href="/pages/cart.html"><img class="shoppingCart" src="/assets/shoppingcart.jpg" width="20"
+                    height="20"></a>
+        </div>
+    </nav>
+
+
+    <div class="row">
+        <div class="col-md-6 text-xs-right">(<span class="items text-muted"></span> <small>items</small>) <span
+                class="total"></span> </div>
+        <div class="col-md-6 text-xs-right"> <span class="btn btn-success" data-toggle="modal" data-target="#cart">Open
+                Shopping Cart</span><a href="../pages/cart.html" class="btn btn-secondary">Proceed to checkout</a></div>
+    </div>
+
+    <input type="radio" id="trees" name="color" />
+    <label class="treesFilter" for="trees">ONE TREE PLANTED</label>
+    <input type="radio" id="children" name="color" />
+    <label class="childrenFilter" for="children">SAVE THE CHILDREN</label>
+    <input class="resetFilter" type="radio" id="reset" name="color" />
+    <label for="reset">RESET</label>
+
+    <br></br>
+    <br></br>
+    <div class="products">
+        <div class="product trees">
+            <a href=""><img src="/assets/oneTreePlanted.png"></a>
+            <div class="pInfo">
+                <p class="pName">100 trees planted</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">1,000,000</span><a
+                    class="card-link productItem btn btn-primary" data-name="100trees" data-price="1000000" data-id="26">
+                    <h4 class="popup26" onclick="popUp26()">Add to cart<span class="popuptext26" id="myPopup26">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+        <div class="product trees">
+            <a href=""><img src="/assets/oneTreePlanted.png"></a>
+            <div class="pInfo">
+                <p class="pName">50 trees planted</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">500,000</span><a
+                    class="card-link productItem btn btn-primary" data-name="50trees" data-price="500000" data-id="27">
+                    <h4 class="popup27" onclick="popUp27()">Add to cart<span class="popuptext27" id="myPopup27">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+        <div class="product trees">
+            <a href=""><img src="/assets/oneTreePlanted.png"></a>
+            <div class="pInfo">
+                <p class="pName">20 trees planted</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">200,000</span><a
+                    class="card-link productItem btn btn-primary" data-name="20trees" data-price="200000" data-id="28">
+                    <h4 class="popup28" onclick="popUp28()">Add to cart<span class="popuptext28" id="myPopup28">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+        <div class="product trees">
+            <a href=""><img src="/assets/oneTreePlanted.png"></a>
+            <div class="pInfo">
+                <p class="pName">10 trees planted</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">100,000</span><a
+                    class="card-link productItem btn btn-primary" data-name="10trees" data-price="100000" data-id="29">
+                    <h4 class="popup29" onclick="popUp29()">Add to cart<span class="popuptext29" id="myPopup29">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+        <div class="product children">
+            <a href=""><img src="/assets/saveTheChildren.png"></a>
+            <div class="pInfo">
+                <p class="pName">100 €</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">1,000,000</span><a
+                    class="card-link productItem btn btn-primary" data-name="100e" data-price="1000000" data-id="30">
+                    <h4 class="popup30" onclick="popUp30()">Add to cart<span class="popuptext30" id="myPopup30">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+        <div class="product children">
+            <a href=""><img src="/assets/saveTheChildren.png"></a>
+            <div class="pInfo">
+                <p class="pName">50 €</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">500,000</span><a
+                    class="card-link productItem btn btn-primary" data-name="50e" data-price="500000" data-id="31">
+                    <h4 class="popup31" onclick="popUp31()">Add to cart<span class="popuptext31" id="myPopup31">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+        <div class="product children">
+            <a href=""><img src="/assets/saveTheChildren.png"></a>
+            <div class="pInfo">
+                <p class="pName">20 €</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">200,000</span><a
+                    class="card-link productItem btn btn-primary" data-name="20e" data-price="200000" data-id="32">
+                    <h4 class="popup32" onclick="popUp32()">Add to cart<span class="popuptext32" id="myPopup32">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+        <div class="product children">
+            <a href=""><img src="/assets/saveTheChildren.png"></a>
+            <div class="pInfo">
+                <p class="pName">10 €</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">100,000</span><a
+                    class="card-link productItem btn btn-primary" data-name="10e" data-price="100000" data-id="33">
+                    <h4 class="popup33" onclick="popUp33()">Add to cart<span class="popuptext33" id="myPopup33">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+
+<div class="modal fade" id="cart" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title">Shopping Cart</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-hover">
+                    <thead class="thead-inverse">
+                        <tr>
+                            <th>Qty</th>
+                            <th>Item Name</th>
+                            <th>Cost</th>
+                            <th class="text-xs-right">Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody id="output"> </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-dismiss="modal">Continue Shopping</button><a
+                    href="../pages/cart.html" class="btn btn-primary">Proceed to checkout</a></div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footercontainer">
+        <div class="footerrow">
+            <div class="footer-col">
+                <h4>PRIVACY</h4>
+                <ul>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookies Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>EXTRA</h4>
+                <ul>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">F1 Experiences</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Tickets</a></li>
+                    <li><a href="#">Rules & Regulations</a></li>
+                    <li><a href="#">Latest News</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>PAGES</h4>
+                <ul>
+                    <li><a href="../pages/homepage.html">Home</a></li>
+                    <li><a href="https://www.twitch.tv/formula1" target="_blank">Watch</a></li>
+                    <li><a href="/gamepage.html">Play</a></li>
+                    <li><a href="../pages/challenges.html">Rewards</a></li>
+                    <li><a href="../pages/choose.html">Store</a></li>
+                    <li><a href="../pages/profile.html">Profile</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>CONTACT</h4>
+                <ul>
+                    <li><a href="#">NL 060 - 123 - 45 - 67</a></li>
+                    <li><a href="#">support@starz.com</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footerBottom">&copy; Designed by StarZ</div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js"
+    integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"
+    integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous">
+</script>
+<script src="../js/shoppingCart.js"></script>
+
+</html>

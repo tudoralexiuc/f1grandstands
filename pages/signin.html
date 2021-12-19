@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/check-session.js"></script>
+
+    <title>Sign In</title>
+</head>
+
+<body class="signInPage">
+
+    <nav>
+        <div class="leftheader-menu">
+            <div class="logo">
+                <a href="/pages/landingpage.html"><img src="/assets/Grandstands_Logo_White.png" width="95" height="30"></a>
+            </div>
+        </div>
+        <div class="rightheader-menu">
+            <a href="/pages/signin.html">SIGN IN</a>
+            <a href="/signup.html">SIGN UP</a>
+        </div>
+    </nav>
+
+    <div class="leftFormBackground">
+        <img src="/assets/leftGreyBackground.png">
+    </div>
+
+    <div class="secondF1Image">
+        <img src="/assets/right3DFormula1.png">
+    </div>
+
+    <div class="signIncontainer">
+        <div class="title">Sign In</div>
+        <div class="signInContent">
+            <form class="signInForm" id="sign-in">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Email address</span>
+                        <input type="email" placeholder="Enter your email address" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Password</span>
+                        <input type="password" placeholder="********" required>
+                    </div>
+                </div>
+                <div class="button">
+                    <input class="logIn" type="submit" value="LOG IN">
+                </div>
+            </form>
+        </div>
+    </div>
+    <a href="/signup.html"><input class="signUpButton" type="submit" value="SIGN UP"></a>
+
+</body>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<footer class="footer">
+    <div class="footercontainer">
+        <div class="footerrow">
+            <div class="footer-col">
+                <h4>PRIVACY</h4>
+                <ul>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookies Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>EXTRA</h4>
+                <ul>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">F1 Experiences</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Tickets</a></li>
+                    <li><a href="#">Rules & Regulations</a></li>
+                    <li><a href="#">Latest News</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>PAGES</h4>
+                <ul>
+                    <li><a href="../pages/homepage.html">Home</a></li>
+                    <li><a href="https://www.twitch.tv/formula1" target="_blank">Watch</a></li>
+                    <li><a href="/gamepage.html">Play</a></li>
+                    <li><a href="../pages/challenges.html">Rewards</a></li>
+                    <li><a href="../pages/choose.html">Store</a></li>
+                    <li><a href="../pages/profile.html">Profile</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>CONTACT</h4>
+                <ul>
+                    <li><a href="#">NL 060 - 123 - 45 - 67</a></li>
+                    <li><a href="#">support@starz.com</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footerBottom">&copy; Designed by StarZ</div>
+</footer>
+
+</html>

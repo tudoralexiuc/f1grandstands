@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- LINK CSS  -->
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="../js/auth.js"></script>
+    <title>Home</title>
+</head>
+
+<body class="profilePage">
+
+    <nav>
+        <div class="leftheader-menu">
+            <div class="logo">
+                <a href="/pages/homepage.html"><img src="/assets/Grandstands_Logo_White.png" width="95" height="30"></a>
+            </div>
+            <a href="/gamepage.html">PLAY</a>
+            <a href="https://www.twitch.tv/formula1" target="_blank">WATCH</a>
+            <a href="/pages/challenges.html">REWARDS</a>
+            <a href="/pages/choose.html">STORE</a>
+        </div>
+        <div class="rightheader-menu">
+            <a href="/pages/profile.html">PROFILE</a>
+            <a href="#" id="logout-button">LOG OUT</a>
+            <a href="/pages/cart.html"><img class="shoppingCart" src="/assets/shoppingcart.jpg" width="20"
+                    height="20"></a>
+        </div>
+    </nav>
+
+    <section class="banner_sec">
+        <div class="containerr">
+            <div class="row">
+                <div class="col_1">
+                    <div class="placeholder" id="placeholder"
+                        style="background-image: url('../assets/placeholder.jpg');">
+                        <div class="camera" id="camera" style="opacity: 0;">
+                            <img src="../assets/camera.png" alt="">
+                        </div>
+                    </div>
+                    <h2 id="username_profile_handle">RSXDRIVER</h2>
+                    <div class="hr"></div>
+                    <h5>MEMBER SINCE</h5>
+                    <h6 id="profile_join_date">June 2020</h6>
+                    <br>
+                    <img src="../assets/logo_1.png" class="logo_1" alt="">
+                </div>
+                <div class="col_2">
+                    <div class="tropy_row">
+                        <div class="col_2">
+                            <h1 id="user_trophies_score">120</h1>
+                            <p>Your Trophies</p>
+                        </div>
+                        <div class="col_2">
+                            <img class="profileTrophy" src="/assets/pngwing.com.png" alt="">
+                        </div>
+
+                    </div>
+                    <h2>Recently completed</h2>
+                    <br>
+                    <p>Link your Social Media to your <br> account</p>
+                    <h5>+50 trophies</h5>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal" id="modal">
+            <div class="modal-images">
+                <img src="../assets/mercedes.jpg" alt="" class="modal-img">
+                <img src="../assets/petronas.jpg" alt="" class="modal-img">
+                <img src="../assets/redbull.png" alt="" class="modal-img">
+                <img src="../assets/sf.jpg" alt="" class="modal-img">
+            </div>
+            <div class="modal-btns">
+                <button type="button" class="cancel-btn" id="cancel-btn">Cancel</button>
+                <button type="button" class="confirm-btn" id="confirm-btn">Confirm</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="/js/changePic.js"></script>
+</body>
+
+<footer class="footer">
+    <div class="footercontainer">
+        <div class="footerrow">
+            <div class="footer-col">
+                <h4>PRIVACY</h4>
+                <ul>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookies Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>EXTRA</h4>
+                <ul>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">F1 Experiences</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Tickets</a></li>
+                    <li><a href="#">Rules & Regulations</a></li>
+                    <li><a href="#">Latest News</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>PAGES</h4>
+                <ul>
+                    <li><a href="../pages/homepage.html">Home</a></li>
+                    <li><a href="https://www.twitch.tv/formula1" target="_blank">Watch</a></li>
+                    <li><a href="/gamepage.html">Play</a></li>
+                    <li><a href="../pages/challenges.html">Rewards</a></li>
+                    <li><a href="../pages/choose.html">Store</a></li>
+                    <li><a href="../pages/profile.html">Profile</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>CONTACT</h4>
+                <ul>
+                    <li><a href="#">NL 060 - 123 - 45 - 67</a></li>
+                    <li><a href="#">support@starz.com</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footerBottom">&copy; Designed by StarZ</div>
+</footer>
+
+</html>

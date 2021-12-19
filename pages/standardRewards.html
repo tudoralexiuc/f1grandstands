@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Store Page</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
+        integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="../js/auth.js"></script>
+</head>
+
+
+<body class="standarddRewards">
+    <nav>
+        <div class="leftheader-menu">
+            <div class="logo">
+                <a href="/pages/homepage.html"><img src="/assets/Grandstands_Logo_White.png" width="95" height="30"></a>
+            </div>
+            <a href="/gamepage.html">PLAY</a>
+            <a href="https://www.twitch.tv/formula1" target="_blank">WATCH</a>
+            <a href="/pages/challenges.html">REWARDS</a>
+            <a href="/pages/choose.html">STORE</a>
+        </div>
+        <div class="rightheader-menu">
+            <a href="/pages/profile.html">PROFILE</a>
+            <a href="#" id="logout-button">LOG OUT</a>
+            <a href="/pages/cart.html"><img class="shoppingCart" src="/assets/shoppingcart.jpg" width="20"
+                    height="20"></a>
+        </div>
+    </nav>
+
+
+    <div class="row">
+        <div class="col-md-6 text-xs-right">(<span class="items text-muted"></span> <small>items</small>) <span
+                class="total"></span> </div>
+        <div class="col-md-6 text-xs-right"> <span class="btn btn-success" data-toggle="modal" data-target="#cart">Open
+                Shopping Cart</span><a href="../pages/cart.html" class="btn btn-secondary">Proceed to checkout</a></div>
+    </div>
+
+    <input type="radio" id="tickets" name="color" />
+    <label for="tickets">TICKETS</label>
+    <input type="radio" id="clothes" name="color" />
+    <label for="clothes">CLOTHES</label>
+    <input type="radio" id="mysterybox" name="color" />
+    <label for="mysterybox">MYSTERY BOXES</label>
+    <input type="radio" id="laps" name="color" />
+    <label for="laps">LAPS</label>
+    <input type="radio" id="subscription" name="color" />
+    <label for="subscription">SUBSCRIPTION</label>
+    <input type="radio" id="mag" name="color" />
+    <label for="mag">MEET AND GREET</label>
+    <input type="radio" id="reset" name="color" />
+    <label for="reset">RESET</label>
+
+
+    <br></br>
+    <br></br>
+    <br></br>
+    <div class="products">
+        <div class="product tickets">
+            <img src="/assets/2GP Tickets.png">
+            <div class="pInfo">
+                <p class="pName">2x Tickets to GP of choice</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span
+                    class="standardPrice">2,000,000</span><a class="card-link productItem btn btn-primary"
+                    data-name="2xTickets" data-price="2000000" data-id="1">
+                    <h4 class="popup1" onclick="popUp1()">Add to cart<span class="popuptext1" id="myPopup1">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+
+        <div class="product tickets">
+            <img src="/assets/GP Tickets.jpg">
+            <div class="pInfo">
+                <p class="pName">1x Ticket to GP of choice</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span
+                    class="standardPrice">1,200,000</span><a class="card-link productItem btn btn-primary"
+                    data-name="1xTickets" data-price="1200000" data-id="2">
+                    <h4 class="popup2" onclick="popUp2()">Add to cart<span class="popuptext2" id="myPopup2">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+        <div class="product laps">
+            <img src="/assets/ridealong-daniel.png">
+            <div class="pInfo">
+                <p class="pName">1 Lap with Daniel Ricciardo</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span
+                    class="standardPrice">1,000,000</span><a class="card-link productItem btn btn-primary"
+                    data-name="1LapDaniel" data-price="1000000" data-id="3">
+                    <h4 class="popup3" onclick="popUp3()">Add to cart<span class="popuptext3" id="myPopup3">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+
+        <div class="product laps">
+            <img src="/assets/ridealong-george.png">
+            <div class="pInfo">
+                <p class="pName">1 Lap with George Russel</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span
+                    class="standardPrice">1,000,000</span><a class="card-link productItem btn btn-primary"
+                    data-name="1LapGeorge" data-price="1000000" data-id="4">
+                    <h4 class="popup4" onclick="popUp4()">Add to cart<span class="popuptext4" id="myPopup4">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+
+        <div class="product laps">
+            <img src="/assets/ridealong-pierre.png">
+            <div class="pInfo">
+                <p class="pName">1 Lap with Pierre Gasly</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span
+                    class="standardPrice">1,000,000</span><a class="card-link productItem btn btn-primary"
+                    data-name="1LapPierre" data-price="1000000" data-id="5">
+                    <h4 class="popup5" onclick="popUp5()">Add to cart<span class="popuptext5" id="myPopup5">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+
+        <div class="product clothes">
+            <img src="/assets/mercedes-jacket-signed.jpg">
+            <div class="pInfo">
+                <p class="pName">Signed Mercedes F1 Jacket</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">950,000</span><a
+                    class="card-link productItem btn btn-primary" data-name="MercedesJacket" data-price="95000"
+                    data-id="6">
+                    <h4 class="popup6" onclick="popUp6()">Add to cart<span class="popuptext6" id="myPopup6">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+
+        <div class="product clothes">
+            <img src="/assets/redbull-jacket-signed.jpg">
+            <div class="pInfo">
+                <p class="pName">Signed Red Bull Jacket</p>
+                <hr class="pHr">
+                </a><img src="/assets/trophy.png" class="trophy" height="15px"><span
+                    class="standardPrice">950,000</span><a class="card-link productItem btn btn-primary"
+                    data-name="RedBullJacket" data-price="95000" data-id="7">
+                    <h4 class="popup7" onclick="popUp7()">Add to cart<span class="popuptext7" id="myPopup7">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+
+        <div class="product clothes">
+            <img src="/assets/mclaren-jacket-signed.jpg">
+            <div class="pInfo">
+                <p class="pName">Signed Mclaren Jacket</p>
+                <hr class="pHr">
+                </a><img src="/assets/trophy.png" class="trophy" height="15px"><span
+                    class="standardPrice">950,000</span><a class="card-link productItem btn btn-primary"
+                    data-name="McLarenJacket" data-price="95000" data-id="8">
+                    <h4 class="popup8" onclick="popUp8()">Add to cart<span class="popuptext8" id="myPopup8">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+
+        <div class="product clothes">
+            <img src="/assets/ferrari-jacket-signed.jpg">
+            <div class="pInfo">
+                <p class="pName">Signed Ferrari Jacket</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">950,000</span><a
+                    class="card-link productItem btn btn-primary" data-name="FerrariJacket" data-price="95000"
+                    data-id="9">
+                    <h4 class="popup9" onclick="popUp9()">Add to cart<span class="popuptext9" id="myPopup9">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+
+        <div class="product clothes">
+            <img src="/assets/AM-jacket-signed.jpg">
+            <div class="pInfo">
+                <p class="pName">Signed Aston Martin Jacket</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">950,000</span><a
+                    class="card-link productItem btn btn-primary" data-name="AstonJacket" data-price="95000"
+                    data-id="10">
+                    <h4 class="popup10" onclick="popUp10()">Add to cart<span class="popuptext10" id="myPopup10">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+
+        <div class="product clothes">
+            <img src="/assets/alpine-jacket-signed.jpg">
+            <div class="pInfo">
+                <p class="pName">Signed Alpine Jacket</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">950,000</span><a
+                    class="card-link productItem btn btn-primary" data-name="AlpineJacket" data-price="95000"
+                    data-id="11">
+                    <h4 class="popup11" onclick="popUp11()">Add to cart<span class="popuptext11" id="myPopup11">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+
+        <div class="product clothes">
+            <img src="/assets/alfaromeo-jacket-signed.jpg">
+            <div class="pInfo">
+                <p class="pName">Signed Alfa Romeo Jacket</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">950,000</span> <a
+                    class="card-link productItem btn btn-primary" data-name="AlfaJacket" data-price="95000"
+                    data-id="12">
+                    <h4 class="popup12" onclick="popUp12()">Add to cart<span class="popuptext12" id="myPopup12">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+
+        <div class="product clothes">
+            <img src="/assets/haas-jacket-signed.jpg">
+            <div class="pInfo">
+                <p class="pName">Signed Haas Jacket </p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">950,000</span><a
+                    class="card-link productItem btn btn-primary" data-name="HaasJacket" data-price="95000"
+                    data-id="13">
+                    <h4 class="popup13" onclick="popUp13()">Add to cart<span class="popuptext13" id="myPopup13">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+
+        <div class="product mag">
+            <img src="/assets/meetandgreet-mclaren.png">
+            <div class="pInfo">
+                <p class="pName">Meet and Greet Mclaren</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">915,000</span><a
+                    class="card-link productItem btn btn-primary" data-name="M&GMcLaren" data-price="91500"
+                    data-id="14">
+                    <h4 class="popup14" onclick="popUp14()">Add to cart<span class="popuptext14" id="myPopup14">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+
+        <div class="product mag">
+            <img src="/assets/meetandgreet-ferrari.png">
+            <div class="pInfo">
+                <p class="pName">Meet and Greet Ferrari</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">915,000</span> <a
+                    class="card-link productItem btn btn-primary" data-name="M&GFerrari" data-price="91500"
+                    data-id="15">
+                    <h4 class="popup15" onclick="popUp15()">Add to cart<span class="popuptext15" id="myPopup15">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+
+        <div class="product mag">
+            <img src="/assets/meetandgreet-redbull.png">
+            <div class="pInfo">
+                <p class="pName">Meet and Greet Red Bull</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">915,000</span><a
+                    class="card-link productItem btn btn-primary" data-name="M&GRedBull" data-price="91500"
+                    data-id="16">
+                    <h4 class="popup16" onclick="popUp16()">Add to cart<span class="popuptext16" id="myPopup16">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+
+        <div class="product mag">
+            <img src="/assets/meetandgreet-am.png">
+            <div class="pInfo">
+                <p class="pName">Meet and Greet Aston Martin</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">915,000</span><a
+                    class="card-link productItem btn btn-primary" data-name="M&GAston" data-price="91500" data-id="17">
+                    <h4 class="popup17" onclick="popUp17()">Add to cart<span class="popuptext17" id="myPopup17">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+
+        <div class="product mysterybox">
+            <img src="/assets/giftbox-mercedes.png">
+            <div class="pInfo">
+                <p class="pName">Mystery Box Mercedes</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">850,000</span><a
+                    class="card-link productItem btn btn-primary" data-name="BoxMercedes" data-price="85000"
+                    data-id="18">
+                    <h4 class="popup18" onclick="popUp18()">Add to cart<span class="popuptext18" id="myPopup18">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+
+        <div class="product mysterybox">
+            <img src="/assets/giftbox-alphatauri.png">
+            <div class="pInfo">
+                <p class="pName">Mystery Box Alpha Tauri</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">850,000</span><a
+                    class="card-link productItem btn btn-primary" data-name="BoxAlpha" data-price="85000" data-id="19">
+                    <h4 class="popup19" onclick="popUp19()">Add to cart<span class="popuptext19" id="myPopup19">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+
+        <div class="product mysterybox">
+            <img src="/assets/giftbox-williams.png">
+            <div class="pInfo">
+                <p class="pName">Mystery Box Williams</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">850,000</span><a
+                    class="card-link productItem btn btn-primary" data-name="BoxWilliams" data-price="85000"
+                    data-id="20">
+                    <h4 class="popup20" onclick="popUp20()">Add to cart<span class="popuptext20" id="myPopup20">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+
+        <div class="product clothes">
+            <img src="/assets/mercedes-polo.jpg">
+            <div class="pInfo">
+                <p class="pName">Mercedes Polo</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">655,000</span><a
+                    class="card-link productItem btn btn-primary" data-name="MercedesPolo" data-price="65500"
+                    data-id="21">
+                    <h4 class="popup21" onclick="popUp21()">Add to cart<span class="popuptext21" id="myPopup21">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+
+        <div class="product clothes">
+            <img src="/assets/redbull-polo.jpg">
+            <div class="pInfo">
+                <p class="pName">Red Bull Polo</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">655,000</span> <a
+                    class="card-link productItem btn btn-primary" data-name="RedBullPolo" data-price="65500"
+                    data-id="22">
+                    <h4 class="popup22" onclick="popUp22()">Add to cart<span class="popuptext22" id="myPopup22">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="product clothes">
+            <img src="/assets/mclaren-polo.jpg">
+            <div class="pInfo">
+                <p class="pName">Mclaren Polo</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">655,000</span><a
+                    class="card-link productItem btn btn-primary" data-name="McLarenPolo" data-price="65500"
+                    data-id="23">
+                    <h4 class="popup23" onclick="popUp23()">Add to cart<span class="popuptext23" id="myPopup23">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+
+        <div class="product clothes">
+            <img src="/assets/ferrari-polo.jpg">
+            <div class="pInfo">
+                <p class="pName">Ferrari Polo</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">655,000</span><a
+                    class="card-link productItem btn btn-primary" data-name="FerrariPolo" data-price="65500"
+                    data-id="24">
+                    <h4 class="popup24" onclick="popUp24()">Add to cart<span class="popuptext24" id="myPopup24">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+
+        <div class="product subscription">
+            <img src="/assets/f1tv.png">
+            <div class="pInfo">
+                <p class="pName">1 Year F1 TV Subscription</p>
+                <hr class="pHr">
+                <img src="/assets/trophy.png" class="trophy" height="15px"><span class="standardPrice">600,000</span><a
+                    class="card-link productItem btn btn-primary" data-name="1YearF1Subscription" data-price="60000"
+                    data-id="25">
+                    <h4 class="popup25" onclick="popUp25()">Add to cart<span class="popuptext25" id="myPopup25">Added to cart!</span></h4>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="cart" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Shopping Cart</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-hover">
+                        <thead class="thead-inverse">
+                            <tr>
+                                <th>Qty</th>
+                                <th>Item Name</th>
+                                <th>Cost</th>
+                                <th class="text-xs-right">Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody id="output"> </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-wrning" data-dismiss="modal">Continue Shopping</button><a
+                        href="../pages/cart.html" class="btn btn-scndary">Proceed to checkout</a></div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+<footer class="footer">
+    <div class="footercontainer">
+        <div class="footerrow">
+            <div class="footer-col">
+                <h4>PRIVACY</h4>
+                <ul>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookies Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>EXTRA</h4>
+                <ul>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">F1 Experiences</a></li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">Tickets</a></li>
+                    <li><a href="#">Rules & Regulations</a></li>
+                    <li><a href="#">Latest News</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>PAGES</h4>
+                <ul>
+                    <li><a href="../pages/homepage.html">Home</a></li>
+                    <li><a href="https://www.twitch.tv/formula1" target="_blank">Watch</a></li>
+                    <li><a href="/gamepage.html">Play</a></li>
+                    <li><a href="../pages/challenges.html">Rewards</a></li>
+                    <li><a href="../pages/choose.html">Store</a></li>
+                    <li><a href="../pages/profile.html">Profile</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>CONTACT</h4>
+                <ul>
+                    <li><a href="#">NL 060 - 123 - 45 - 67</a></li>
+                    <li><a href="#">support@starz.com</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footerBottom">&copy; Designed by StarZ</div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js"
+    integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"
+    integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous">
+</script>
+<script src="../js/shoppingCart.js"></script>
